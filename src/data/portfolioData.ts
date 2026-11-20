@@ -50,13 +50,16 @@ export interface ContactChannel {
   href: string;
 }
 
+const withBase = (assetPath: string) =>
+  `${import.meta.env.BASE_URL}${assetPath.replace(/^\//, '')}`;
+
 export const ASSETS = {
-  heroSunset: '/src/assets/images/hero_sunset_horizon_1795181532205.jpg',
-  aboutStudio: '/src/assets/images/about_studio_dusk_1795181535187.jpg',
-  projectAiNeural: '/src/assets/images/project_ai_neural_1795181533556.jpg',
-  projectCyberMesh: '/src/assets/images/project_cyber_mesh_1795181531867.jpg',
-  projectRoboticsPcb: '/src/assets/images/project_robotics_pcb_1795181535436.jpg',
-  certificateHackathonImage: '/assets/aistudio/image_5e70ca5b.png',
+  heroSunset: withBase('src/assets/images/hero_sunset_horizon_1795181532205.jpg'),
+  aboutStudio: withBase('src/assets/images/about_studio_dusk_1795181535187.jpg'),
+  projectAiNeural: withBase('src/assets/images/project_ai_neural_1795181533556.jpg'),
+  projectCyberMesh: withBase('src/assets/images/project_cyber_mesh_1795181531867.jpg'),
+  projectRoboticsPcb: withBase('src/assets/images/project_robotics_pcb_1795181535436.jpg'),
+  certificateHackathonImage: withBase('assets/aistudio/image_5e70ca5b.png'),
 } as const;
 
 export const PROFILE = {
